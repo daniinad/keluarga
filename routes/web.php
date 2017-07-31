@@ -30,6 +30,7 @@ Route::get('testing', 'MyController@index');
 Route::get('testing2', 'MyController@tampilan');
 Route::get('testing3', 'MyController@model');
 Route::resource('orangtua','OrangtuaContorller');
+Route::resource('anak','AnakController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
