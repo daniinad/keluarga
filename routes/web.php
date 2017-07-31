@@ -15,17 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/orangtua', function() {
-	$or = App\Ortu::all();
-	foreach ($or as $data) {
-		echo $data->nama_ibu." dengan ";
-		echo $data->nama_ayah." ";
-		foreach ($data->anak as $key) {
-			echo "<li>$key->nama</li><br>";
-		}
-	}
-});
+//Route::get('/orangtua', function() {
+//	$or = App\Ortu::all();
+//	foreach ($or as $data) {
+//		echo $data->nama_ibu." dengan ";
+//		echo $data->nama_ayah." ";
+//		foreach ($data->anak as $key) {
+//			echo "<li>$key->nama</li><br>";
+//		}
+//	}
+//});
 
 Route::get('testing', 'MyController@index');
 Route::get('testing2', 'MyController@tampilan');
 Route::get('testing3', 'MyController@model');
+Route::resource('orangtua','OrangtuaContorller');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
